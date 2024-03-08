@@ -6,9 +6,9 @@ import time
 import urllib3
 from dotenv import load_dotenv
 
-from download_extract_cpes import download_cpes, extract_cpes
-
 sys.path.append(os.path.dirname(__file__))
+
+from download_extract_cpes import download_cpes, extract_cpes
 
 def main():
     load_dotenv()
