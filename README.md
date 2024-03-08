@@ -25,6 +25,7 @@
 ### Useful links:
 
 CPE 2.3 format: https://en.wikipedia.org/wiki/Common_Platform_Enumeration
+
 CVSS calculation: https://en.wikipedia.org/wiki/Common_Vulnerability_Scoring_System 
 
 ### TODO:
