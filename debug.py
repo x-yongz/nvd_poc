@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 # Returns the response when you do an API call to NVD with the CPE
 def ping_nvd():
     # Edit as necessary
-    cpeName = 'cpe:2.3:a:10up:safe_svg:1.9.10:*:*:*:*:wordpress:*:*'
+    cpeName = 'cpe:2.3:a:\\@nubosoftware\\/node-static_project:\\@nubosoftware\\/node-static:-:*:*:*:*:node.js:*:*'
 
     load_dotenv()
     apiKey = os.getenv('apiKey')
