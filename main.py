@@ -64,6 +64,15 @@ def main():
             if data != 'error':
                 cpe_list_done.append(cpe) 
 
+        print('Writing to file...')
+        with open('cpe_output.json', 'w') as f:
+            json.dump(cpe_list_all, f)
+        cpe_list_done_set = set(cpe_list_done)
+        leftover = [x for x in cpe_list if x not in cpe_list_done_set]
+        with open('cache.json', 'w') as f:
+            json.dump(leftover, f)
+        print('All done! Check cpe_output.json, do not edit cache.json')
+
     except Exception as e:
         print(e)
         print('Error! Saving the progress...')
@@ -79,15 +88,6 @@ def main():
         except Exception as e:
             print(e)
             print('Your unlucky day... Even the save failed, you will need to re-run from the last save...')
-
-    print('Writing to file...')
-    with open('cpe_output.json', 'w') as f:
-        json.dump(cpe_list_all, f)
-    cpe_list_done_set = set(cpe_list_done)
-    leftover = [x for x in cpe_list if x not in cpe_list_done_set]
-    with open('cache.json', 'w') as f:
-        json.dump(leftover, f)
-    print('All done! Check cpe_output.json, do not edit cache.json')
 
 def ping_nvd(http, url, apiKey, cpe):
     output = []
